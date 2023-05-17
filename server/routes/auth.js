@@ -9,26 +9,26 @@ router.get("/login/success", (req, res) => {
       user: req.user,
     });
   } else {
-    res.status(403).json({ error: true, message: "Not Authorized" });
+    res.status(403).json({ error: true, message: "Not Authorised" });
   }
 });
 
 router.get("/login/failed", (req, res) => {
   res.status(401).json({
     error: true,
-    message: "Login Failure",
+    message: "Login failure",
   });
 });
 
+router.get("/google", passport.authenticate("google", ["profile", "email"]));
+
 router.get(
-  "google/callback",
+  "/google/callback",
   passport.authenticate("google", {
     successRedirect: process.env.CLIENT_URL,
     failureRedirect: "/login/failed",
   })
 );
-
-router.get("/google", passport.authenticate("google", ["profile", "email"]));
 
 router.get("/logout", (req, res) => {
   req.logout();
