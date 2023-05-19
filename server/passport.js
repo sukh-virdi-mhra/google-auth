@@ -8,6 +8,7 @@ passport.use(
       clientSecret: process.env.CLIENT_SECRET,
       callbackURL: "/auth/google/callback",
       scope: ["profile", "email"],
+      response_type: "application/json",
     },
     function (accessToken, refreshToken, profile, callback) {
       callback(null, profile);
