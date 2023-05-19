@@ -16,18 +16,10 @@ function Login() {
           <img className="img" src="./images/login.jpg" alt="login" />
         </div>
         <div className="right">
-          <h2 className="from_heading">Members Login</h2>
-          <input type="text" className="input" placeholder="Email" />
-          <input type="text" className="input" placeholder="Password" />
-          <button className="btn">Login</button>
-          <p className="text">or</p>
           <button className="google_btn" onClick={googleAuth}>
             <img src="./images/google.png" alt="google icon" />
             <span>Sign in with Google</span>
           </button>
-          <p className="text">
-            New Here? <Link to="/signup">Sign Up</Link>
-          </p>
         </div>
       </div>
     </div>

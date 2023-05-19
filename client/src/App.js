@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Home from "./components/Home";
 import Login from "./components/Login";
-import Signup from "./components/Signup";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -34,10 +33,6 @@ function App() {
           exact
           path="/login"
           element={user ? <Navigate to="/" /> : <Login />}
-        />
-        <Route
-          path="/signup"
-          element={user ? <Navigate to="/" /> : <Signup />}
         />
       </Routes>
     </div>
