@@ -6,6 +6,7 @@ const authRoute = require("./routes/auth");
 const cookieSession = require("cookie-session");
 const passportStrategy = require("./passport");
 const app = express();
+const path = require("path");
 
 app.use(express.static(__dirname + "/public"));
 
