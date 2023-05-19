@@ -7,6 +7,8 @@ const cookieSession = require("cookie-session");
 const passportStrategy = require("./passport");
 const app = express();
 
+app.use(express.static(__dirname + "/public"));
+
 app.use(
   cookieSession({
     name: "session",
@@ -29,4 +31,9 @@ app.use(
 app.use("/auth", authRoute);
 
 const port = process.env.PORT || 8080;
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/", "index.html"));
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}...`));
