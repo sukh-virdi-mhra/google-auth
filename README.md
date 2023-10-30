@@ -1,3 +1,3 @@
-# RateMe
+# Google-Auth
 
 A work in progress...
